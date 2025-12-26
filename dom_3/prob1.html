@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="abcd"></div>
+    <button>click me</button>
+</body>
+<script>
+    let div = document.getElementById("abcd")
+    let btn = document.querySelector("button")
+
+    btn.addEventListener("click",madetag)
+
+    function madetag(){
+
+
+        for(let i=1;i<=10;i++){
+
+      
+
+        let a = document.createElement("h1")
+
+        let b = document.createElement("p")
+
+        let c = document.createElement("button")
+
+        let div2 = document.createElement("div")
+
+        a.innerText = "hello"
+
+        b.innerText = "i'm para"
+
+        c.innerText = "getbtn"
+
+        div2.append(a,b,c)
+
+        div.append(div2)
+
+          }
+    }
+</script>
+</html>

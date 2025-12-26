@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="border: 2px solid; margin: auto; height: 300px; width: 200px; text-align: center; padding: 20px;">
+    
+    <input id="num1" type="number" placeholder="enter your no.">
+    <br>
+    <br>
+    <input id="num2" type="number" placeholder="enter your 2nd no.">
+    <br><br>
+    <button onclick="btn()">+</button>
+    <button onclick="btn1()">-</button>
+    <button onclick="btn2()">/</button>
+    <button onclick="btn3()">*</button>
+    
+</body>
+<script>
+    function btn(){
+        let a = Number(document.getElementById("num1").value)
+        let b = Number(document.getElementById("num2").value)
+
+        alert(a+b)
+
+    }
+
+    function btn1(){
+        let a = Number(document.getElementById("num1").value)
+        let b = Number(document.getElementById("num2").value)
+
+        alert(a-b)
+
+    }
+
+    function btn2(){
+        let a = Number(document.getElementById("num1").value)
+        let b = Number(document.getElementById("num2").value)
+
+        alert(a/b)
+
+    }
+
+    function btn3(){
+        let a = Number(document.getElementById("num1").value)
+        let b = Number(document.getElementById("num2").value)
+
+        alert(a*b)
+
+    }
+
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>BMI CALCY</h1>
+   <input id="weight" type="number" placeholder="enter your weight">
+   <br><br>
+   <input id="height" type="number" placeholder="enter your height">
+   <br><br>
+
+   <button onclick="btn()">calculate BMI</button>
+   <br>
+   <p id="result"></p>
+</body>
+<script>
+   function btn(){
+
+     let weight = document.getElementById("weight").value 
+
+    let height = document.getElementById("height").value
+
+    let bmi = weight / (height*height) 
+
+    let massege = " "
+
+    if(bmi <=18.4){
+        massege = "underweight"
+    }
+    else if (bmi >= 18.5 && bmi <= 24.9){
+        massege = "Normal weight"
+    }
+    else if( bmi >= 25 && bmi <=29.9 ){
+         massege = "overweight"
+    }
+   else{
+    massege = "obese"
+   }
+
+   document.getElementById("result").innerText = "your bmi is " + bmi.toFixed(2) + "("+ massege + ")";
+   }
+
+</script>
+</html>

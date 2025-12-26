@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: auto; text-align: center; padding: 52px;">
+    <input id="name" type="text" placeholder="enter your name">
+    <br><br>
+    <input id="mobile" type="text" placeholder="enter your mobile">
+    <br><br>
+    <select id="gender">
+        <option value="">select</option>
+        <option value="male 🚹">male</option>
+        <option value="female 🚺">female</option>
+        <option value="gay ⚣">gay</option>
+    </select>
+    <br><br>
+    <button onclick="btn()">submit</button>
+
+    <h1 id="get1"></h1>
+    <h1 id="get2"></h1>
+    <h1 id="get3"></h1>
+</body>
+<script>
+    let n = document.getElementById("name")
+    let m = document.getElementById("mobile")
+    let g = document.getElementById("gender")
+    let a = document.getElementById("get1")
+    let b = document.getElementById("get2")
+    let c = document.getElementById("get3")
+
+    function btn(){
+        a.innerText = n.value
+        b.innerText = m.value 
+        c.innerText = g.value
+    }
+</script>
+</html>

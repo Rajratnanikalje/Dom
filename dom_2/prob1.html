@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click me</button>
+    <br><br>
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+</body>
+<script>
+    let btn = document.querySelector("button")
+
+    btn.addEventListener("mouseover",btn1)
+
+    btn.addEventListener("mouseleave",btn2)
+    function btn1(){
+        btn.style.color = "red"
+    }
+
+    function btn2(){
+        btn.style.color = "black"
+    }
+
+    let select = document.querySelector("select")
+
+    select.addEventListener("click",get_select)
+
+    function get_select(){
+        console.log(select.value);
+        
+    }
+</script>
+</html>

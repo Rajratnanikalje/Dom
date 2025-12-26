@@ -1,0 +1,215 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .container{
+           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .container>img{
+          width: 200px;
+          height: 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+</body>
+<script>
+    let data = [
+  {
+    "id": 1,
+    "title": "Everyday Laptop Backpack",
+    "price": 9126,
+    "description": "A strong and stylish backpack designed for daily use, travel, and office needs. Safely fits laptops and essentials.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
+  },
+  {
+    "id": 2,
+    "title": "Men's Casual Slim T-Shirt",
+    "price": 1851,
+    "description": "Soft and breathable slim-fit t-shirt ideal for everyday comfort and casual outings.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png"
+  },
+  {
+    "id": 3,
+    "title": "Men's Warm Cotton Jacket",
+    "price": 4647,
+    "description": "Lightweight yet warm jacket suitable for winter wear, travel, and outdoor activities.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png"
+  },
+  {
+    "id": 4,
+    "title": "Men's Slim Fit Casual Shirt",
+    "price": 1327,
+    "description": "A comfortable slim-fit shirt perfect for casual and semi-formal occasions.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png"
+  },
+  {
+    "id": 5,
+    "title": "Elegant Gold Silver Bracelet",
+    "price": 57685,
+    "description": "Premium bracelet crafted with a unique design, ideal for festive and special occasions.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png"
+  },
+  {
+    "id": 6,
+    "title": "Minimal Gold Ring",
+    "price": 13944,
+    "description": "Simple and elegant gold ring suitable for daily wear and gifting.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png"
+  },
+  {
+    "id": 7,
+    "title": "Classic Diamond Style Ring",
+    "price": 829,
+    "description": "A timeless ring design perfect for engagements and special celebrations.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png"
+  },
+  {
+    "id": 8,
+    "title": "Rose Gold Tunnel Earrings",
+    "price": 912,
+    "description": "Stylish rose gold plated earrings made from durable stainless steel.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png"
+  },
+  {
+    "id": 9,
+    "title": "Portable External Hard Drive 2TB",
+    "price": 5312,
+    "description": "High-capacity external hard drive for fast data transfer and reliable storage.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png"
+  },
+  {
+    "id": 10,
+    "title": "1TB Internal SSD Drive",
+    "price": 9047,
+    "description": "High-speed internal SSD that improves system performance and boot time.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png"
+  },
+  {
+    "id": 11,
+    "title": "256GB High Performance SSD",
+    "price": 9047,
+    "description": "Reliable SSD offering fast read/write speeds for smoother computing.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png"
+  },
+  {
+    "id": 12,
+    "title": "4TB Gaming External Drive",
+    "price": 9462,
+    "description": "Portable external drive designed for gaming consoles and high storage needs.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png"
+  },
+  {
+    "id": 13,
+    "title": "Full HD IPS Monitor",
+    "price": 49717,
+    "description": "Ultra-thin Full HD monitor delivering vibrant colors and smooth visuals.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png"
+  },
+  {
+    "id": 14,
+    "title": "Ultra Wide Curved Gaming Monitor",
+    "price": 82999,
+    "description": "High refresh rate curved monitor designed for immersive gaming experiences.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png"
+  },
+  {
+    "id": 15,
+    "title": "Women's Winter Snow Jacket",
+    "price": 4721,
+    "description": "Warm and versatile winter jacket suitable for cold weather and outdoor use.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png"
+  },
+  {
+    "id": 16,
+    "title": "Women's Faux Leather Jacket",
+    "price": 2486,
+    "description": "Stylish faux leather jacket with a modern fit for casual wear.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png"
+  },
+  {
+    "id": 17,
+    "title": "Women's Lightweight Rain Jacket",
+    "price": 3319,
+    "description": "Comfortable rain jacket designed to keep you dry during light showers.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png"
+  },
+  {
+    "id": 18,
+    "title": "Women's Casual Short Sleeve Top",
+    "price": 818,
+    "description": "Soft and stretchable casual top ideal for everyday wear.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png"
+  },
+  {
+    "id": 19,
+    "title": "Women's Sports Fit T-Shirt",
+    "price": 660,
+    "description": "Lightweight and breathable t-shirt designed for comfort and movement.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png"
+  },
+  {
+    "id": 20,
+    "title": "Women's Cotton Casual T-Shirt",
+    "price": 1078,
+    "description": "Comfortable cotton t-shirt suitable for casual, office, or daily wear.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png"
+  }
+]
+
+  let main = document.getElementById("main")
+
+  data.map(function(el){
+    // console.log(el)
+   
+    let title = document.createElement("h2")
+    title.innerText = el.title;
+    let price = document.createElement("h3")
+    price.innerText = "Price -" + " " + el.price;
+    let image = document.createElement("img")
+    image.src = el.image
+    let addcart = document.createElement("button")
+    addcart.innerText = "Add to Cart"
+    let div = document.createElement("div")
+    div.setAttribute("class","container")
+    div.append(image,title,price,addcart)
+    main.append(div)
+
+  })
+</script>
+</html>

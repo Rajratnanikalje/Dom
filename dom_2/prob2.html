@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="heading" id="head">hello</h1>
+    <h2 class="heading">hello 2</h2>
+    <h3 class="heading">hello 3</h3>
+    <h4 class="heading">hello 4</h4>
+    <h2 class="heading">hello 5</h2>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+     Odio assumenda neque voluptates ex unde voluptas illo ad dolorum 
+     tempore iure expedita sed officiis vel fugiat eius, cumque consectetur?
+     Voluptate, iure?</p>
+</body>
+<script>
+    let a = document.getElementsByTagName("h1")
+    console.log(a);
+
+    let b = document.getElementById("head")
+    b.style.color = "red"
+
+    let c = document.getElementsByClassName("heading")
+    c[1].style.color = "blue"
+
+    for(let i = 0; i<c.length; i++){
+        c[i].style.color = "blue"
+    }
+    
+</script>
+</html>
