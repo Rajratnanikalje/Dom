@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-app</title>
+   <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <!-- Dont make any changes here -->
+    <h1>Employee Records</h1>
+    
+
+    <div>
+      <!-- ***** We are using form here  ****  -->
+      <form >
+        <label >Employee Name</label><br />
+        <input id="name" type="text" placeholder="Enter Employee  Name" /><br />
+        <label >Employee ID</label><br />
+        <input id="employee" type="text" placeholder="Enter Employee ID" /><br />
+        <label >Department</label><br />
+        <select id="department">
+          <option value="">Select Department </option>
+          <option value="frontend">frontend</option>
+          <option value="backend">backend</option>
+          <option value="Ops">Ops</option>
+          <option value="HR">HR</option>
+          <option value="IA">IA</option>
+        </select><br />
+        <label >Experience</label><br />
+        <input id="experience" type="number" placeholder="Enter Experience" /><br />
+        <label >Email Address</label><br />
+        <input id="email" type="email" placeholder="Enter Email address" /><br />
+        <label >Mobile Number</label><br />
+        <input id="number" type="number" placeholder="Enter Mobile Number " /><br />
+        
+        <input type="submit" />
+      </form>
+      
+      <table>
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Employee ID</th>
+            <th>Department</th>
+            <th>Experience <br> in years</th>
+            <th>Email Address</th>
+            <th>Mobile Number</th>
+            <th>Role</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script src="./record.js"></script>

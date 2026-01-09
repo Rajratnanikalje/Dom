@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local Storage</h1>
+</body>
+<script>
+//    local Storage - Browser provide storage
+
+// limitation
+// data capicity 5mb
+// its only store string
+// no expiry time
+// its store in key value pair
+// insecure
+
+// localStorage.setItem(key,value)
+// localStorage.getItem(key)
+// localStorage.removeItem(key)
+// localStorage.clear()
+
+localStorage.setItem("number","Hello")
+
+let a = localStorage.getItem("number")
+
+console.log(a)
+
+let x = "bye bye"
+
+localStorage.setItem("a",x)
+
+let y =  localStorage.getItem("a")
+console.log(y)
+
+// localStorage.removeItem("a")
+
+localStorage.clear()
+
+
+
+</script>
+</html>
