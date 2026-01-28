@@ -1,73 +1,92 @@
-let form = document.querySelector("form");
-let tbody = document.querySelector("tbody");
+let form = document.querySelector("form")
+let tbody = document.querySelector("tbody")
 
 let name = document.getElementById("name");
 let employee = document.getElementById("employee");
 let department = document.getElementById("department");
-let experience = document.getElementById("experience");
-let email = document.getElementById("email");
-let number = document.getElementById("number");
+let experience = document.getElementById("experience")
+let email = document.getElementById("email")
+let mobile = document.getElementById("number")
 
-let employee_arr = JSON.parse(localStorage.getItem("employee_arr")) || [];
+form.addEventListener("submit", getData)
 
-form.addEventListener("submit", getData);
-display(employee_arr);
+let Employee_arr = JSON.parse(localStorage.getItem("Employee_data")) || [];
+display(Employee_arr);
 
 function getData(event){
-  event.preventDefault();
+  event.preventDefault()
 
-  let employee_obj = {
-    name: name.value,
-    employee: employee.value,
-    department: department.value,
-    experience: Number(experience.value),
-    email: email.value,
-    number: number.value,
-  };
+  let Employee_obj = {
+    name : name.value,
+    employee : employee.value,
+    department : department.value,
+    experience : Number(experience.value),
+    email : email.value,
+    mobile : mobile.value
+  }
 
-  employee_arr.push(employee_obj);
-  localStorage.setItem("employee_arr", JSON.stringify(employee_arr));
-  display(employee_arr);
-  form.reset();
+  Employee_arr.push(Employee_obj)
+  
+  localStorage.setItem("Employee_data", JSON.stringify(Employee_arr));
+ 
+  display(Employee_arr)
+  form.reset()
 }
 
 function display(data){
   tbody.innerHTML = "";
 
-  data.forEach(function(el, index){
+  data.map(function (el, index){
     let row = document.createElement("tr");
 
+    let col1 = document.createElement("td");
+    col1.innerText = el.name;
+
+    let col2 = document.createElement("td");
+    col2.innerText = el.employee;
+
+    let col3 = document.createElement("td");
+    col3.innerText = el.department;
+
+    let col4 = document.createElement("td");
+    col4.innerText = el.experience;
+
+    let col5 = document.createElement("td");
+    col5.innerText = el.email;
+
+    let col6 = document.createElement("td");
+    col6.innerText = el.mobile;
+
+    let col7 = document.createElement("td");
     let role = "";
     if(el.experience > 5){
-      role = "Senior";
-    } else if(el.experience >= 2){
-      role = "Junior";
-    } else {
-      role = "Fresher";
+     role = "Senior";
+    }else if(el.experience >= 2 && el.experience <= 5){
+     role = "Junior";
+    }else{
+     role = "Trainee";
     }
+    col7.innerText = role;
 
-    row.innerHTML = `
-      <td>${el.name}</td>
-      <td>${el.employee}</td>
-      <td>${el.department}</td>
-      <td>${el.experience}</td>
-      <td>${el.email}</td>
-      <td>${el.number}</td>
-      <td>${role}</td>
-      <td style="background:red;color:white;cursor:pointer;">Delete</td>
-    `;
+    let col8 = document.createElement("td");
+    col8.innerText = "Delete"
+    col8.style.cursor = "pointer"
+    col8.style.backgroundColor = "red"
+    col8.style.color = "white"
+    
+    
 
-    row.lastElementChild.addEventListener("click", function () {
-  deleteData(index);
-});
+    col8.addEventListener("click", function(){
+      deletefun(index)
+    })
 
-
+    row.append(col1,col2,col3,col4,col5,col6,col7,col8);
     tbody.append(row);
   });
 }
 
-function deleteData(index){
-  employee_arr.splice(index,1);
-  localStorage.setItem("employee_arr", JSON.stringify(employee_arr));
-  display(employee_arr);
+function deletefun(num){
+  Employee_arr.splice(num,1)
+  localStorage.setItem("Employee_data", JSON.stringify(Employee_arr));
+  display(Employee_arr)
 }
